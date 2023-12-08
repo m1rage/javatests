@@ -1,0 +1,2 @@
+# javatests
+Practice with javajitsu
