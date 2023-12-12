@@ -9,32 +9,37 @@ public class RadioButtonsPage {
 
     private SelenideElement yesRadio = $("#yesRadio");
     private SelenideElement impressiveRadio = $("#impressiveRadio");
-    private SelenideElement noRadio = $("noRadio");
+    private SelenideElement noRadio = $("#noRadio");
     private SelenideElement textSuccess = $(".text-success");
 
     public void openPage () {
         open("/radio-button");
     }
 
-    public void clickRadioButton (String value) {
-        if (value = "Yes")
-        {
-            $(yesRadio).sibling(0).click();
-        }
-        else (value = "Impressive")
-        {
-            $(impressiveRadio).sibling(0).click();
-        }
+    public void clickYesRadioButton () {
+        yesRadio.shouldBe(enabled);
+        yesRadio.sibling(0).click();
     }
 
-    public void checkResult (String value) {
-        if (value = "Yes")
-        {
-            $(textSuccess).shouldHave(text("Yes"));
-        }
-        else (value = "Impressive")
-        {
-            $(textSuccess).shouldHave(text("Impressive"));
-        }
+    public void clickImpressiveRadioButton () {
+        impressiveRadio.shouldBe(enabled);
+        impressiveRadio.sibling(0).click();
     }
+
+    public void checkClickYesRadioButton () {
+        yesRadio.shouldBe(selected);
+        textSuccess.shouldBe(visible);
+        textSuccess.shouldHave(text("Yes"));
+    }
+
+    public void checkClickImpressiveRadioButton () {
+        impressiveRadio.shouldBe(selected);
+        textSuccess.shouldBe(visible);
+        textSuccess.shouldHave(text("Impressive"));
+    }
+
+    public void checkNoRadioButton () {
+        noRadio.shouldBe(disabled);
+    }
+
 }

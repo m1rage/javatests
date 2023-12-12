@@ -9,11 +9,15 @@ public class RadioButtonTest  extends TestBase {
 
 @Test
 public void fillForms () {
+    radioButtonsPage.openPage();
 
-    public void openPage ()
-    public void clickRadioButton (Yes)
+    radioButtonsPage.clickYesRadioButton();
+    radioButtonsPage.checkClickYesRadioButton();
 
+    radioButtonsPage.clickImpressiveRadioButton();
+    radioButtonsPage.checkClickImpressiveRadioButton();
 
-
+    radioButtonsPage.checkNoRadioButton();
+}
 }
 
