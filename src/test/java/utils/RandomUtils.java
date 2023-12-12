@@ -89,5 +89,14 @@ public class RandomUtils {
         return String.valueOf(randomDate);
     }
 
+    public static String getRandomDepartment() {
+        Random random;
+        String[] department = {"Sales", "Testing", "Development", "Management", "Backoffice", "Support",
+                "Legal", "August", "Security"};
+        random = new Random();
+        int randomIndex = random.nextInt(department.length);
+        return department[randomIndex];
+    }
+
 }
 

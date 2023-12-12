@@ -1,3 +1,5 @@
+package tests;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,6 +17,7 @@ public class PracticeFormTest {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
     }
+
     String firstName = RandomUtils.getRandomString(5);
     String lastName = RandomUtils.getRandomString(7);
     String email = firstName + "." + lastName + "@email.xyz";
@@ -28,6 +31,7 @@ public class PracticeFormTest {
     String address = RandomUtils.getRandomString(10);
     String addressState = "Uttar Pradesh";
     String addressCity = "Agra";
+
     @Test
     public void fillForms() {
         open("/automation-practice-form");
